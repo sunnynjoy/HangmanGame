@@ -14,4 +14,4 @@ scripts for accessing the dictionary file is below (picking words whose length i
 
 cat /usr/share/dict/words | tr '[:upper:]’ '[:lower:]’ | grep -E "^[a-z]{6,}$" | sort | uniq | while read l; do echo "INSERT INTO WORDS (WORD) VALUES ('$l');"; done > dictionary.txt
 
-
+The dictionary.txt and dbScript.txt files can be found in resources folder
