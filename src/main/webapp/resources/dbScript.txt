@@ -1,0 +1,28 @@
+create database nexmodb;
+
+use nexmodb;
+
+use nexmodb;
+
+drop table if exists user;
+
+create table user(
+   userId int not null auto_increment,
+   name varchar(15) null,
+   primary key (userId)
+);
+
+drop table if exists game;
+
+create table game(
+   gameId int not null auto_increment,
+   word varchar(25),
+   gameStatus tinyint(1) default false,
+   numberOfTry int default '8',
+   misses int default 0,
+   guesses int default 0,
+   remainingChars varchar(25),
+   userId int not null,
+   primary key (gameId),
+   foreign key (userId) references user(userId)
+);
